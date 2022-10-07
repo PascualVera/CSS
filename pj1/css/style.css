@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap");
 :root {
 	--primary-color: #020106;
 }
@@ -22,6 +23,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 }
 .cube_container {
 	animation: animateCube 20s infinite linear;
@@ -29,25 +31,67 @@ body {
 	position: fixed;
 }
 .cube {
-	width: 30vw;
-	height: 30vw;
+	width: 45vw;
+	height: 45vw;
 	position: relative;
 	transform-style: preserve-3d;
 	transform: rotateY(60deg) rotateX(60deg);
 }
+.text_box::before {
+	content: "...Some SHITTY text...";
+	color: white;
+	text-shadow: 5px 5px 5px rgb(252, 4, 4), 5px 5px 25px rgb(252, 4, 4),
+		5px 5px 45px rgb(252, 4, 4), 5px 5px 55px rgb(252, 4, 4);
+	position: absolute;
+	top: 0;
+	opacity: 0.4;
+}
+.text_box {
+	font-family: "Roboto Mono", monospace;
+	position: relative;
+	z-index: 1;
+	font-size: 5vw;
+	letter-spacing: 0.7vw;
+	color: white;
+	text-shadow: 0 0 4px #fff, 0 0 6px #fff, 0 0 5px #fff,
+		0 0 5px rgb(140, 4, 252), 0 0 25px rgb(140, 4, 252),
+		0 0 45px rgb(140, 4, 252), 0 0 55px rgb(140, 4, 252);
+}
+
+.text_box::after {
+	content: "...Some SHITTY text...";
+	text-shadow: -5px -5px 10px rgb(252, 4, 4), -5px -5px 25px rgb(216, 17, 17),
+		-5px -5px 45px rgb(252, 4, 4), -5px -5px 55px rgb(252, 4, 4);
+	position: absolute;
+	top: 0;
+	opacity: 0.4;
+}
+.btn {
+	font-family: "Roboto Mono", monospace;
+	width: max-content;
+	padding: 2vw 3vw 2vw 3vw;
+	font-size: 2vw;
+	font-weight: bold;
+	position: absolute;
+	bottom: 100px;
+	margin: auto;
+	border-radius: 10px;
+	color: white;
+	background: none;
+}
 
 .cube__face {
 	position: absolute;
-	width: 30vw;
-	height: 30vw;
+	width: 45vw;
+	height: 45vw;
 	border: 2px solid white;
-	box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 5px #fff inset,
-		0 0 10px #fff inset, 0 0 20px #fff inset, 0 0 40px rgb(140, 4, 252),
+	box-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 20px #fff, 0 0 5px #fff inset,
+		0 0 5px #fff inset, 0 0 20px #fff inset, 0 0 40px rgb(140, 4, 252),
 		0 0 40px rgb(140, 4, 252) inset, 0 0 80px rgb(140, 4, 252) inset,
 		0 0 70px rgb(140, 4, 252), 0 0 80px rgb(140, 4, 252),
 		0 0 75px rgb(140, 4, 252) inset, 0 0 110px rgb(140, 4, 252),
 		0 0 110px rgb(140, 4, 252) inset;
-	opacity: 0.4;
+	opacity: 0.3;
 	background-color: rgba(140, 4, 252, 0.2);
 	animation: pulsateBorder 1s infinite linear;
 }
